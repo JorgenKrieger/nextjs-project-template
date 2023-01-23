@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: sleep infinity
+    ports:
+      - "3000:3000"
+        
+  cypress:
+    image: "cypress/included:3.4.0"
+    depends_on:
+      - web
+    environment:
+      - CYPRESS_baseUrl=http://web:3000
+    working_dir: /e2e
+    volumes:
+      - ./:/e2e

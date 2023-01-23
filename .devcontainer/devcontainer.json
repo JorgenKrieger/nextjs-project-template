@@ -17,7 +17,7 @@
 	"forwardPorts": [3000, 8080],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pnpm install",
+	"postCreateCommand": "pnpm install && pnpm exec cypress install",
 
 	// Configure tool-specific properties.
 	"customizations": {
