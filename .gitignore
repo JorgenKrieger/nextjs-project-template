@@ -151,3 +151,5 @@ next-env.d.ts
 ### Vercel ###
 
 # End of https://www.toptal.com/developers/gitignore/api/nextjs,dotenv,archive,macos,linux,executable,vercel,cypressio
+
+/.devcontainer/java
