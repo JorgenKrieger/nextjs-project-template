@@ -4,6 +4,8 @@
 ARG VARIANT="18"
 FROM mcr.microsoft.com/devcontainers/typescript-node:0-${VARIANT}
 
+RUN mkdir /app
+
 # [Optional] Uncomment this section to install additional OS packages.
 RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && \
 	sudo apt-get install -y default-jre default-jdk \
@@ -18,6 +20,8 @@ RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && \
 		libxtst6 \
 		xauth \
 		xvfb
+
+RUN find /usr/lib/jvm -type d -name 'java-*' | xargs -I {} ln -ns {} /app/java
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10

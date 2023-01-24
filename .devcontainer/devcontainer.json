@@ -17,7 +17,7 @@
 	"forwardPorts": [3000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "find /usr/lib/jvm -type d -name 'java-*' | xargs -I {} ln -ns {} /workspaces/${localWorkspaceFolderBasename}/.devcontainer/java && pnpm install && pnpm exec cypress install",
+	"postCreateCommand": "pnpm install && pnpm exec cypress install",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -28,7 +28,7 @@
 				"editor.detectIndentation": false,
 				"editor.formatOnSave": true,
 				"editor.formatOnPaste": true,
-				"sonarlint.ls.javaHome": "/workspaces/${localWorkspaceFolderBasename}/.devcontainer/java"
+				"sonarlint.ls.javaHome": "/app/java"
 			},
 			"extensions": [
 				"esbenp.prettier-vscode",
