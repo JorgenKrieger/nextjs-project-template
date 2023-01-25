@@ -4,9 +4,7 @@
 ARG VARIANT="18"
 FROM mcr.microsoft.com/devcontainers/typescript-node:0-${VARIANT}
 
-RUN mkdir /app
-
-# [Optional] Uncomment this section to install additional OS packages.
+# Install core dependancies for Cypress & SonarLint
 RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && \
 	sudo apt-get install -y default-jre default-jdk \
 		libgtk2.0-0 \
@@ -21,6 +19,8 @@ RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && \
 		xauth \
 		xvfb
 
+# Create symlink to Jave Runtime Engine to have a fixed path for amd64 and arm64 builds.
+RUN mkdir /app
 RUN find /usr/lib/jvm -type d -name 'java-*' | xargs -I {} ln -ns {} /app/java
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
