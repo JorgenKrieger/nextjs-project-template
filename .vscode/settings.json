@@ -1,4 +1,7 @@
 {
+	// Use typescript provided in this repo
 	"typescript.tsdk": "node_modules/.pnpm/typescript@4.9.4/node_modules/typescript/lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	// Prevent Windows style end of line in files
+	"files.eol": "\n",
 }
