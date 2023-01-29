@@ -4,4 +4,8 @@
 	"typescript.enablePromptUseWorkspaceTsdk": true,
 	// Prevent Windows style end of line in files
 	"files.eol": "\n",
+	// Tailwind support for CSS Intellisense
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
 }
