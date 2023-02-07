@@ -8,5 +8,15 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/aspect-ratio'),
+		require('@tailwindcss/container-queries'),
+		require('@tailwindcss/line-clamp'),
+		require('@tailwindcss/typography')
+	],
+	presets: [
+		require('./tailwind/base'),
+		require('./tailwind/colors'),
+		require('./tailwind/typography')
+	]
 };

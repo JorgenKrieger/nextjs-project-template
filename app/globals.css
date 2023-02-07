@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	:root {
+		--color-foreground: theme('colors.black');
+		--color-background: theme('colors.white');
+		--color-accent: theme('colors.blue.500')
+	}
+}
+
 :root {
 	--max-width: 1100px;
 	--border-radius: 12px;
