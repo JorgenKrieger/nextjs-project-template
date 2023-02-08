@@ -1,19 +1,9 @@
-'use client'
-
-import { ThemeProvider } from 'next-themes'
-// import ThemeSwitch from '@/components/ThemeSwitch'
-import React, { useEffect } from 'react'
-import ReactDOM from 'react-dom'
+import ThemeSwitch from '@/components/ThemeSwitch'
+import { ReactNode } from 'react'
 import './globals.css'
+import Providers from './Providers'
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-	useEffect(() => {
-		if (process.env.NODE_ENV !== 'production') {
-			const axe = require('@axe-core/react');
-			axe(React, ReactDOM, 1000);
-		}
-	}, [])
-
+export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="en">
 			{/*
@@ -22,10 +12,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       */}
 			<head />
 			<body>
-				<ThemeProvider attribute='class'>
-					{/* <ThemeSwitch /> */}
+				<Providers>
+					<ThemeSwitch />
 					{children}
-				</ThemeProvider>
+				</Providers>
 			</body>
 		</html>
 	);
