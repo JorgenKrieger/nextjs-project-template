@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: sleep infinity
+    ports:
+      - "3000:3000"
+    command: pnpm run dev
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 1m
+        
+  cypress:
+    image: "cypress/included:12.3.0"
+    depends_on:
+      web: 
+        condition: service_healthy
+    environment:
+      - CYPRESS_baseUrl=http://web:3000
+    working_dir: /e2e
+    volumes:
+      - ./:/e2e

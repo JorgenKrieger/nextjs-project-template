@@ -1,4 +1,12 @@
 {
-	"typescript.tsdk": "node_modules/.pnpm/typescript@4.9.4/node_modules/typescript/lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true
+  // Use typescript provided in this repo
+  "typescript.tsdk": "node_modules/.pnpm/typescript@4.9.5/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  // Prevent Windows style end of line in files
+  "files.eol": "\n",
+  // Tailwind support for CSS Intellisense
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.tsx": "typescriptreact"
+  }
 }

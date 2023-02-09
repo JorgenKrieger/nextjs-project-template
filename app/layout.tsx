@@ -1,25 +1,22 @@
-'use client'
-
-import React, { useEffect } from 'react'
-import ReactDOM from 'react-dom'
+// import ThemeSwitch from '@/components/ThemeSwitch'
+import { ReactNode } from 'react'
 import './globals.css'
+import Providers from './Providers'
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-	if (process.env.NODE_ENV !== 'production') {
-		useEffect(() => {
-			const axe = require('@axe-core/react');
-			axe(React, ReactDOM, 1000);
-		},[])
-	}
-
+export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="en">
 			{/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+				<head /> will contain the components returned by the nearest parent
+				head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
+			*/}
 			<head />
-			<body>{children}</body>
+			<body>
+				<Providers>
+					{/* <ThemeSwitch /> */}
+					{children}
+				</Providers>
+			</body>
 		</html>
 	);
 }

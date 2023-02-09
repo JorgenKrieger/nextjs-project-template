@@ -1,0 +1,13 @@
+{
+	"recommendations": [
+		// Devcontainers
+		"ms-vscode-remote.remote-containers",
+		// Linting
+		"esbenp.prettier-vscode",
+		// Security
+		"sonarsource.sonarlint-vscode",
+		"hcltechnologies.hclappscancodesweep",
+		// Intellisense
+		"bradlc.vscode-tailwindcss"
+	]
+}
