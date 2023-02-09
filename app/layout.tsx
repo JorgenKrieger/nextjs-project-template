@@ -1,4 +1,4 @@
-import ThemeSwitch from '@/components/ThemeSwitch'
+// import ThemeSwitch from '@/components/ThemeSwitch'
 import { ReactNode } from 'react'
 import './globals.css'
 import Providers from './Providers'
@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 			<head />
 			<body>
 				<Providers>
-					<ThemeSwitch />
+					{/* <ThemeSwitch /> */}
 					{children}
 				</Providers>
 			</body>
