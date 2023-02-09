@@ -7,6 +7,6 @@
   // Tailwind support for CSS Intellisense
   "files.associations": {
     "*.css": "tailwindcss",
-	"*.tsx": "typescriptreact"
+    "*.tsx": "typescriptreact"
   }
 }
